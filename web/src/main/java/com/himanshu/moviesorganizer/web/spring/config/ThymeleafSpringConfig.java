@@ -1,4 +1,4 @@
-package com.himanshu.web.moviesorganizer.spring.config;
+package com.himanshu.moviesorganizer.web.spring.config;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

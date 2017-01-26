@@ -8,12 +8,13 @@ import org.springframework.boot.system.ApplicationPidFileWriter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-import com.himanshu.web.moviesorganizer.spring.config.ThymeleafSpringConfig;
+import com.himanshu.moviesorganizer.busines.spring.config.ConfigPropertiesLoader;
+import com.himanshu.moviesorganizer.web.spring.config.ThymeleafSpringConfig;
 
 @SpringBootApplication
 @EnableAutoConfiguration (exclude = {ThymeleafAutoConfiguration.class})
 @ComponentScan(basePackages = { "com.himanshu.moviesorganizer.web.controller"})
-@Import(value=ThymeleafSpringConfig.class)
+@Import(value={ThymeleafSpringConfig.class, ConfigPropertiesLoader.class})
 public class Main {
   public static void main(String[] args) {
     SpringApplication sa = new SpringApplication(Main.class);
