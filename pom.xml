@@ -11,14 +11,21 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
+		<version>1.4.3.RELEASE</version>
 	</parent>
 	
 	<properties>
+	    <!-- Overrding thymeleaf in spring-boot -->
+        <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.1.1</thymeleaf-layout-dialect.version>
+		<!-- Overrding thymeleaf in spring-boot ENDS HERE-->
+		
+        <java.version>1.8</java.version>
 		<h2.version>1.4.182</h2.version>
 		<guava.version>18.0</guava.version>
 		<commons-codec.version>1.10</commons-codec.version>
 		<hamcrest.version>1.3</hamcrest.version>
+		<janino.version>2.6.1</janino.version>
 	</properties>
 	
 	<modules>
@@ -37,6 +44,11 @@
 <!--                     <artifactId>spring-boot-starter-tomcat</artifactId> -->
 <!--                 </exclusion> -->
 <!-- 	    	</exclusions> -->
+        </dependency>
+		<dependency>
+          <groupId>org.codehaus.janino</groupId>
+          <artifactId>janino</artifactId>
+          <version>${janino.version}</version>
         </dependency>
 <!--         <dependency> -->
 <!--             <groupId>org.springframework.boot</groupId> -->

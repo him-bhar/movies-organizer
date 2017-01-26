@@ -1,0 +1,40 @@
+<configuration scan="true" scanPeriod="60 seconds">
+	<if condition='isNull("logs.dir")'>
+		<then>
+			<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+				<encoder>
+					<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -	%msg%n%ex
+					</pattern>
+				</encoder>
+			</appender>
+
+			<root level="INFO">
+				<appender-ref ref="STDOUT" />
+			</root>
+		</then>
+		<else>
+			<appender name="FileAppender"
+				class="ch.qos.logback.core.rolling.RollingFileAppender">
+				<file>${logs.dir}/cucumber-poc.log</file>
+				<append>true</append>
+				<encoder>
+					<pattern>%date{ISO8601} %thread %m%n %ex</pattern>
+				</encoder>
+				<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+					<fileNamePattern>${logs.dir}/cucumber-poc.%d{yyyy-MM-dd}.%i.log.gz
+					</fileNamePattern>
+					<!-- <maxHistory>5</maxHistory> -->
+					<timeBasedFileNamingAndTriggeringPolicy
+						class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+						<maxFileSize>50MB</maxFileSize>
+					</timeBasedFileNamingAndTriggeringPolicy>
+				</rollingPolicy>
+			</appender>
+
+			<root level="INFO">
+				<appender-ref ref="FileAppender" />
+			</root>
+		</else>
+	</if>
+
+</configuration>
