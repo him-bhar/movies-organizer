@@ -9,14 +9,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.stereotype.Component;
 
-@Component
 public class CustomAuthProvider implements AuthenticationProvider {
 
   @Override
   public Authentication authenticate(Authentication paramAuthentication) throws AuthenticationException {
-    if (((String)paramAuthentication.getPrincipal()).equalsIgnoreCase("himanshu") && ((String)paramAuthentication.getCredentials()).equalsIgnoreCase("bhardwaj")) {
+    if (((String)paramAuthentication.getPrincipal()).equalsIgnoreCase("user") && ((String)paramAuthentication.getCredentials()).equalsIgnoreCase("user")) {
       List<GrantedAuthority> permissions = new ArrayList<>();
       permissions.add(new SimpleGrantedAuthority("ROLE_USER"));
       return new UsernamePasswordAuthenticationToken(paramAuthentication.getPrincipal(), paramAuthentication.getCredentials(), permissions);

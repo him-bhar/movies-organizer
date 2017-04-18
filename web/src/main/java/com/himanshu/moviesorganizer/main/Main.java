@@ -9,13 +9,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
 import com.himanshu.moviesorganizer.busines.spring.config.ConfigPropertiesLoader;
-import com.himanshu.moviesorganizer.web.spring.config.SpringSecurityConfig;
+import com.himanshu.moviesorganizer.web.spring.config.MoviesOrganiserConfigurer;
+import com.himanshu.moviesorganizer.web.spring.config.SecurityConfigurer;
 import com.himanshu.moviesorganizer.web.spring.config.ThymeleafSpringConfig;
 
 @SpringBootApplication
 @EnableAutoConfiguration (exclude = {ThymeleafAutoConfiguration.class})
-@ComponentScan(basePackages = { "com.himanshu.moviesorganizer.web.controller", "com.himanshu.moviesorganizer.web.spring.security"})
-@Import(value={ThymeleafSpringConfig.class, ConfigPropertiesLoader.class, SpringSecurityConfig.class})
+@ComponentScan(basePackages = { "com.himanshu.moviesorganizer.web.controller" })
+@Import(value={ThymeleafSpringConfig.class, ConfigPropertiesLoader.class, SecurityConfigurer.class, MoviesOrganiserConfigurer.class})
 public class Main {
   public static void main(String[] args) {
     SpringApplication sa = new SpringApplication(Main.class);
