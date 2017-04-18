@@ -92,9 +92,10 @@ public class ConfigPropertiesLoader implements BeanFactoryPostProcessor, Priorit
   private List<String> filePaths(String envProperty) {
     List<String> filePaths = new ArrayList<String>();
     filePaths.add(String.format("config/global.default.properties", envProperty));
-    filePaths.add(String.format("config/spring.%s.properties", envProperty));
-    filePaths.add("config/local.default.properties");
+    filePaths.add(String.format("config/movies.default.properties", envProperty));
+    filePaths.add(String.format("config/movies.%s.properties", envProperty));
     filePaths.add(String.format("config/personal.properties", envProperty));
+    filePaths.add(String.format("config/movies.overrides.properties", envProperty));
     return filePaths;
   }
 
