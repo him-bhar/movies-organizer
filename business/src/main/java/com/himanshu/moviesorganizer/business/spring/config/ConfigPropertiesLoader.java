@@ -1,4 +1,4 @@
-package com.himanshu.moviesorganizer.busines.spring.config;
+package com.himanshu.moviesorganizer.business.spring.config;
 
 import java.io.IOException;
 import java.util.ArrayList;

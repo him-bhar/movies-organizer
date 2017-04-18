@@ -8,7 +8,7 @@ import org.springframework.boot.system.ApplicationPidFileWriter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-import com.himanshu.moviesorganizer.busines.spring.config.ConfigPropertiesLoader;
+import com.himanshu.moviesorganizer.business.spring.config.ConfigPropertiesLoader;
 import com.himanshu.moviesorganizer.web.spring.config.MoviesOrganiserConfigurer;
 import com.himanshu.moviesorganizer.web.spring.config.SecurityConfigurer;
 import com.himanshu.moviesorganizer.web.spring.config.ThymeleafSpringConfig;

@@ -1,4 +1,4 @@
-package com.himanshu.moviesorganizer.busines.filesystem.scanner;
+package com.himanshu.moviesorganizer.business.filesystem.scanner;
 
 import java.io.File;
 import java.util.regex.Matcher;
