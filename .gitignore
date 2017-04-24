@@ -51,3 +51,7 @@ Temporary Items
 .classpath
 .project
 .settings
+
+#Idea
+.idea/*
+**/*.iml
