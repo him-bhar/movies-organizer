@@ -17,10 +17,10 @@ import com.himanshu.moviesorganizer.web.spring.config.ThymeleafSpringConfig;
 @EnableAutoConfiguration (exclude = {ThymeleafAutoConfiguration.class})
 @ComponentScan(basePackages = { "com.himanshu.moviesorganizer.web.controller" })
 @Import(value={ThymeleafSpringConfig.class, ConfigPropertiesLoader.class, SecurityConfigurer.class, MoviesOrganiserConfigurer.class})
-public class Main {
+public class MoviesOrganizerStarter {
   public static void main(String[] args) {
-    SpringApplication sa = new SpringApplication(Main.class);
-    sa.addListeners(new ApplicationPidFileWriter(System.getProperty("logs.dir") != null ? System.getProperty("logs.dir").concat("/application.pid") : Main.class.getResource("/").getFile().concat("/application.pid")));
+    SpringApplication sa = new SpringApplication(MoviesOrganizerStarter.class);
+    sa.addListeners(new ApplicationPidFileWriter(System.getProperty("logs.dir") != null ? System.getProperty("logs.dir").concat("/application.pid") : MoviesOrganizerStarter.class.getResource("/").getFile().concat("/application.pid")));
     sa.run(args);
   }
 }
